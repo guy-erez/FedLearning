@@ -7,7 +7,7 @@ class NeuralNetwork(nn.Module):
         super().__init__()
         self.flatten = nn.Flatten()
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(20, 60),
+            nn.Linear(20, 60),  
             nn.ReLU(),
             nn.Linear(60, 60),
             nn.ReLU(),
@@ -41,7 +41,7 @@ def train(dataloader, model, loss_fn, optimizer,device):
         X, y = x.to(device,dtype=torch.float32), y.to(device,dtype=torch.float32)
 
         # Compute prediction error
-        pred = model(X)
+        pred = model(X)   
         loss = loss_fn(pred, y)
 
         # Backpropagation

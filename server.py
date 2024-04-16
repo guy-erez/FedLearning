@@ -43,6 +43,10 @@ def main(args):
     # print(common_model.linear_relu_stack[0].weight[0])
 
     classes = ['Alive', 'Dead'] 
+    
+    model_path = f"common_model.pth"
+    torch.save(common_model.state_dict(), model_path)
+    print(f"Saved PyTorch Model State to {model_path}")
 
     common_model.eval()
     sample = test_data[0]
